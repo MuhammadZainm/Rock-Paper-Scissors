@@ -44,14 +44,14 @@ return game;
 winner=game()
 function winnerAnnouncement(){
     if (winner == "tied"){
-        alert("Haha! The Game was tied. The Computer entered " +humanChoice +" too.")
+        alert("Haha! The Game was tied. The Computer chose " +humanChoice +" too.")
 }
   else  if (winner == "usrwon"){
-        alert("Wow! You won the game. The Computer Entered "+computerChoice)
+        alert("Wow! You won the game. The Computer chose "+computerChoice)
 }
 
   else  if (winner == "compwon"){
-        alert("OOPS! The computer won. It Entered "+ computerChoice)
+        alert("OOPS! The computer won. It chose "+ computerChoice)
 }
 
 
