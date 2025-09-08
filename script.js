@@ -1,8 +1,20 @@
-function fullgame(){
+function playGame(){
+    let computerScore =0 ;
+    let humanScore =0;
+    function playRound(){
 let humanChoice;
 let computerChoice;
 let num;
 let winner;
+
+function gethumanChoice(){
+let choice;
+let input = prompt("Rock,Paper or Scissors");
+choice=input.toLowerCase();
+return choice;
+}
+humanChoice=gethumanChoice()
+console.log("You chose", humanChoice)
 function getcomputerChoice(){
     let choice
 num = Math.floor(Math.random()*3);
@@ -19,14 +31,6 @@ return choice;
 }
 computerChoice= getcomputerChoice()
 console.log("Computer chose",computerChoice)
-function gethumanChoice(){
-let choice;
-let input = prompt("Rock,Paper or Scissors");
-choice=input.toLowerCase();
-return choice;
-}
-humanChoice=gethumanChoice()
-console.log("You chose", humanChoice)
 function game(){
     let game;
 if (computerChoice == "Rock" && humanChoice=="rock" ||computerChoice == "Scissors" && humanChoice=="scissors" || computerChoice == "Paper" && humanChoice=="paper" ){
@@ -53,12 +57,23 @@ function winnerAnnouncement(){
   else  if (winner == "compwon"){
         alert("OOPS! The computer won. It chose "+ computerChoice)
 }
+}
+function scoreCounter(){
+   if (winner == "usrwon"){
+       humanScore++;
+}
 
+  else  if (winner == "compwon"){
+        computerScore++;
+}
 
 }
 winnerAnnouncement()
-
+scoreCounter()
 }
-for(let i=0; i<=100;i++){
-    fullgame()
+for(let i=0;i<5;i++){
+    playRound()
 }
+alert("You won "+humanScore+" games and computer won "+computerScore+" games.")
+}
+playGame()
