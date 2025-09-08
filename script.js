@@ -1,6 +1,7 @@
 function playGame(){
     let computerScore =0 ;
     let humanScore =0;
+    let ties=0;
     function playRound(){
 let humanChoice;
 let computerChoice;
@@ -66,6 +67,9 @@ function scoreCounter(){
   else  if (winner == "compwon"){
         computerScore++;
 }
+else {
+    ties++;
+}
 
 }
 winnerAnnouncement()
@@ -74,6 +78,20 @@ scoreCounter()
 for(let i=0;i<5;i++){
     playRound()
 }
-alert("You won "+humanScore+" games and computer won "+computerScore+" games.")
+console.log("You won "+humanScore+" games and computer won "+computerScore+" games and ",ties," games went tie.")
+function finalResult(){
+    let margin=Math.abs(humanScore-computerScore)
+    if(humanScore>computerScore){
+        alert("You won by "+margin +" games.")
+    }
+    else if(humanScore<computerScore){
+        alert("Computer won by "+ margin +" games.")
+    }
+    else{
+        alert("GAME TIED")
+    }
+}
+finalResult()
+
 }
 playGame()
