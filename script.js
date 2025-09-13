@@ -75,9 +75,9 @@ else {
 winnerAnnouncement()
 scoreCounter()
 }
-for(let i=0;i<5;i++){
-    playRound()
-}
+// for(let i=0;i<5;i++){
+//     playRound()
+// }
 console.log("You won "+humanScore+" games and computer won "+computerScore+" games and ",ties," games went tie.")
 function finalResult(){
     let margin=Math.abs(humanScore-computerScore)
